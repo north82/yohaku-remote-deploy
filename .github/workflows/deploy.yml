@@ -15,6 +15,9 @@ on:
 
   repository_dispatch:
     types: [trigger-workflow]
+    
+  schedule:
+    - cron: '0 */6 * * *'
 
 permissions:
   contents: write
