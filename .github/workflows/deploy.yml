@@ -40,6 +40,7 @@ jobs:
 
     outputs:
       hash_content: ${{ steps.read_hash.outputs.hash_content }}
+hash_content ： $ { { steps.read_hash.outputs.hash_content } }  
 
     steps:
       - name: Checkout
@@ -67,6 +68,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           fetch-depth: 0
           lfs: true
+          submodules: recursive
 
       - name: Compare hash
         id: compare
@@ -109,6 +111,7 @@ jobs:
           ref: ${{ needs.check.outputs.sha_full }}
           fetch-depth: 1
           lfs: true
+          submodules: recursive
 
       - name: Checkout LFS objects
         run: git lfs checkout
