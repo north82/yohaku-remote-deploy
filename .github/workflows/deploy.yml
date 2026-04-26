@@ -40,7 +40,6 @@ jobs:
 
     outputs:
       hash_content: ${{ steps.read_hash.outputs.hash_content }}
-hash_content ： $ { { steps.read_hash.outputs.hash_content } }  
 
     steps:
       - name: Checkout
